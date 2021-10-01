@@ -8,10 +8,10 @@ require('dotenv/config');
 app.use(bodyParser.json());
 
 //Import Routes
-const bookRoute= require ("./Routes/book");
+const bookRoute= require ("./Routes/book");  //BOOK ROUTE
 app.use('/book',bookRoute);
 
-const genreRoute= require ("./Routes/genre");
+const genreRoute= require ("./Routes/genre");  //GENRE ROUTE
 app.use('/genre',genreRoute);
 
 
