@@ -4,14 +4,16 @@ const Book= require('../Models/Book');
 const Genre= require('../Models/Genre');
 
 //GET REQUESTS
-router.get('/',(req,res)=>{
-    res.send('List of All Books');
+router.get('/',async(req,res)=>{
+    const books=await Book.find().populate('genre');
+    return res.send(books);
 });
 
 
-router.get('/specific',(req,res)=>{
-    res.send('Detail of specific Book');
-});
+router.get('/:id', async (req, res) => {
+    const book = await Book.findById(req.params.id).populate('genre');
+    return res.send(book);
+  })
 
 
 //SUBMIT A BOOK TO THE DB i.e. POST REQUESTS

@@ -12,10 +12,10 @@ const BookSchema=mongoose.Schema({
         audioUrl: String,
         Description: String,		//basic show before playing
         SummaryText: String,		// read section
-        genre:[ {
+        genre:{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Genre'
-        }]
+        }
     
     
 

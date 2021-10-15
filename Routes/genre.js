@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Genre= require('../Models/Genre');
 
+router.get('/',async(req,res)=>{
+    const genres=await Genre.find();
+    return res.send(genres);
+});
+
 
 //SUBMIT GENRE DETAILS TO DB
 router.post('/',async (req,res)=>{
