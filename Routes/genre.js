@@ -4,7 +4,7 @@ const Genre = require('../Models/Genre');
 
 router.get('/', async (req, res) => {
   const genres = await Genre.find().populate('books');
-  return res.send(genres);
+  return res.send({genres});
 });
 
 //SUBMIT GENRE DETAILS TO DB
